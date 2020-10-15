@@ -19,3 +19,10 @@ if(stranger.innerText === "world") {
 
 // function toto() {};
 // const toto = () => {};
+
+const noStars = document.querySelector("#noStars");
+noStars.addEventListener(, (evt)=>{
+    const val = evt.target.value;
+    const newVal = val.replace(/\*/g,"");
+    evt.target.value = newVal;
+});
