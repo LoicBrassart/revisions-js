@@ -21,8 +21,28 @@ if(stranger.innerText === "world") {
 // const toto = () => {};
 
 const noStars = document.querySelector("#noStars");
-noStars.addEventListener(, (evt)=>{
+noStars.addEventListener("change", (evt)=>{
     const val = evt.target.value;
     const newVal = val.replace(/\*/g,"");
     evt.target.value = newVal;
 });
+
+/* -------------------- */
+const multiplications = document.querySelector("#multiplications");
+
+for(let mul=0;mul<11;mul++) {
+    const h2 = document.createElement("h2");
+    h2.innerText = `Table de ${mul}`;
+    multiplications.appendChild(h2);
+    
+    const ul = document.createElement("ul");
+    for(let i=0;i<11;i++) {
+        const li = document.createElement("li");
+        li.innerText = `${i}*${mul}=${mul*i}`;
+        ul.appendChild(li);
+
+        //console.log(`${i}*${mul}=${mul*i}`);
+    }
+    multiplications.appendChild(ul);
+}
+
